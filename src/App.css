@@ -1,0 +1,70 @@
+.app-container{
+  display: flex;
+}
+.main-container{
+  font-family: sans-serif;
+  font-size: small;
+  /* text-align: center; */
+  width:800px;
+  border:1px solid black;
+  padding:10px
+}
+.main-container h3{
+  color:darkblue;
+}
+.provider-address{
+  line-height: 2px;
+}
+.provider-details{
+  text-align:center;
+}
+.provider-details div:nth-child(1){
+  line-height: 2px;height:auto;padding:5px 0;background-color: #adcdf0;
+}
+.consumer-container{
+  display:flex;
+  justify-content: space-between;
+}
+table tr,td{
+  outline:1px solid black;
+  padding:5px
+}
+table{
+  border-collapse: collapse;
+  width: 100%;
+}
+tr:nth-child(1) td{
+  background-color: #adcdf0 ;
+}
+tr:nth-child(3) td{
+  background-color: #adcdf0 ;
+}
+/* Add padding to the second row only */
+tr:nth-child(2) td {
+  height: 100px;
+}
+/* Remove border for empty cells */
+td:empty {
+          border: none;
+      }
+td:not(:has(*)):not(:has(text)) {
+border: none;
+}
+.total-price{
+  padding:20px 0 0 0 ;
+}
+.total-price p{
+  font-size: smaller; text-align: right;padding-top: 10px;margin-bottom: 0;
+}
+
+.form-container{
+  width:50%
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
