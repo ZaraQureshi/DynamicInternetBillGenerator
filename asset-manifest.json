@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/DynamicInternetBillGenerator/static/css/main.ff89c283.css",
+    "main.js": "/DynamicInternetBillGenerator/static/js/main.e75076d3.js",
+    "static/js/488.96ec425e.chunk.js": "/DynamicInternetBillGenerator/static/js/488.96ec425e.chunk.js",
+    "index.html": "/DynamicInternetBillGenerator/index.html",
+    "main.ff89c283.css.map": "/DynamicInternetBillGenerator/static/css/main.ff89c283.css.map",
+    "main.e75076d3.js.map": "/DynamicInternetBillGenerator/static/js/main.e75076d3.js.map",
+    "488.96ec425e.chunk.js.map": "/DynamicInternetBillGenerator/static/js/488.96ec425e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ff89c283.css",
+    "static/js/main.e75076d3.js"
+  ]
+}
