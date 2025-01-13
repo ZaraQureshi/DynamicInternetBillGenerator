@@ -1,10 +1,26 @@
 import React, { useEffect } from "react";
 import { useData } from "./DataContext.tsx";
+import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
 const Bill = () => {
   const { data } = useData();
   //
-
-  console.log(data);
+  const downloadPDF = () => {
+    const element = document.getElementById("main-container"); // ID of the HTML element you want to convert to PDF
+    if (!element || !(element instanceof HTMLElement)) {
+        console.error("Element with the specified ID is not a valid HTMLElement.");
+        return;
+      }
+    html2canvas(element).then((canvas: HTMLCanvasElement) => {
+      const imgData = canvas.toDataURL("image/png");
+      const pdf = new jsPDF("p", "mm", "a4");
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+  
+      pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+      pdf.save("download.pdf"); // Save the PDF file
+    });
+  };
   const generateRandomNumber=()=>{
     return Math.floor(Math.random()*10000000000)
   }
@@ -53,7 +69,10 @@ const Bill = () => {
   };
 
   return (
-    <div class="main-container">
+    <div>
+
+    
+    <div class="main-container" id="main-container">
       <div class="provider-details">
         <div>
           <h3>{data.providerName}</h3>
@@ -104,7 +123,7 @@ const Bill = () => {
             <td>Internet bandwidth charges</td>
             <td>1</td>
             <td>Online Payment</td>
-            <td>{data.price}</td>
+            <td>{data.totalAmount}</td>
           </tr>
           <tr>
             <td>Total value</td>
@@ -122,6 +141,10 @@ const Bill = () => {
           signature
         </p>
       </div>
+    </div>
+    <button type="submit" class="btn btn-primary" onClick={downloadPDF()}>
+          Download
+        </button>
     </div>
   );
 };

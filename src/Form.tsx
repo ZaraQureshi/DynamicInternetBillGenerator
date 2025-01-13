@@ -143,6 +143,16 @@ const Form = () => {
             onChange={handleInputChange}
           />
         </div>
+        <div class="mb-3">
+          <label class="form-label">Total Amount:</label>
+          <input
+            type="text"
+            class="form-control"
+            name="totalAmount"
+            value={data.totalAmount}
+            onChange={handleInputChange}
+          />
+        </div>
 
         <button type="submit" class="btn btn-primary">
           Submit

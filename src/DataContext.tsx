@@ -20,7 +20,8 @@ export const DataProvider: React.FC<{ children: ReactNode }> =({children})=>{
     subscriptionType:"",
     renewalDate:"",
     speed:"",
-    totalAmount:""
+    totalAmount:"",
+    
     });    
     return (
         <DataContext.Provider value={{data,setData}}>
