@@ -6,7 +6,11 @@ const Bill = () => {
   const { data } = useData();
   //
   const downloadPDF = () => {
+    console.log("inside download");
+    
     const element = document.getElementById("main-container"); // ID of the HTML element you want to convert to PDF
+    console.log("inside download",element);
+
     if (!element || !(element instanceof HTMLElement)) {
         console.error("Element with the specified ID is not a valid HTMLElement.");
         return;
@@ -75,7 +79,7 @@ const Bill = () => {
     <div class="main-container" id="main-container">
       <div class="provider-details">
         <div>
-          <h3>{data.providerName}</h3>
+          <h3><img src={"https://www.freepnglogos.com/uploads/logo-internet-png/logo-internet-internet-icon-line-iconset-iconsmind-31.png"}/>{data.providerName}</h3>
           <h5>INTERNET & WIFI SERVICES</h5>
           <h5>We Provide You The Best Internet Service</h5>
         </div>
@@ -116,6 +120,7 @@ const Bill = () => {
             <td>Services</td>
             <td>Quantity</td>
             <td>Remarks</td>
+            <td>GST</td>
             <td>Invoice Value</td>
           </tr>
           <tr>
@@ -123,10 +128,12 @@ const Bill = () => {
             <td>Internet bandwidth charges</td>
             <td>1</td>
             <td>Online Payment</td>
+            <td>9%</td>
             <td>{data.totalAmount}</td>
           </tr>
           <tr>
             <td>Total value</td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -135,14 +142,14 @@ const Bill = () => {
         </table>
       </div>
       <div class="total-price">
-        <span>Total rupees in words: Six hundred rupees only</span>
+        {/* <span>Total rupees in words: Six hundred rupees only</span> */}
         <p>
           This is computer generated reciept and therefore does not require any
           signature
         </p>
       </div>
     </div>
-    <button type="submit" class="btn btn-primary" onClick={downloadPDF()}>
+    <button type="submit" class="btn btn-primary" onClick={downloadPDF}>
           Download
         </button>
     </div>

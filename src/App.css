@@ -2,13 +2,14 @@
   display: flex;
 }
 .main-container{
-  font-family: sans-serif;
+  font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   font-size: small;
   /* text-align: center; */
   width:800px;
   border:1px solid black;
   padding:10px
 }
+
 .main-container h3{
   color:darkblue;
 }
@@ -18,8 +19,11 @@
 .provider-details{
   text-align:center;
 }
+.provider-details img{
+height:2em;
+}
 .provider-details div:nth-child(1){
-  line-height: 2px;height:auto;padding:5px 0;background-color: #adcdf0;
+  line-height: 2px;height:auto;padding:5px 0;background-color: #adcdf0;margin-bottom: 1em
 }
 .consumer-container{
   display:flex;
