@@ -63,7 +63,7 @@ const Bill = () => {
         // return 
     }
     if(data.subscriptionType == "Monthly"){
-        renewalDate=getEndOfMonth(renewalDate)
+        renewalDate.setMonth(renewalDate.getMonth()+1)
         // return 
     }
     console.log("expiry1");
