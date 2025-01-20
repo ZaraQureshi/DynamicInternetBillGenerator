@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useData } from "./DataContext.tsx";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
-import './Bill.css';
+import './App.css';
 const Bill = () => {
   const { data } = useData();
   //
