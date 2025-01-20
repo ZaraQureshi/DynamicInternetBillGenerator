@@ -8,7 +8,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
+    env: 
+      CI: false
     steps:
       # Step 1: Checkout the repository
       - name: Checkout code
