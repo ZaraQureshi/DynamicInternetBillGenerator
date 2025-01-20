@@ -21,7 +21,8 @@ const Form = () => {
   };
   return (
     <div class="form-container container">
-      <form style={{ width: "100%" }} onSubmit={setAllFormValues}>
+      <div className="provider-details-form">
+        <h5>Provider Details: </h5>
         <div class="mb-3">
           <label class="form-label">Provider name:</label>
           <input
@@ -62,7 +63,9 @@ const Form = () => {
             onChange={handleInputChange}
           />
         </div>
-
+      </div>
+      <div className="user-details-form">
+        <h5>User details: </h5>
         <div class="mb-3">
           <label class="form-label">User Id:</label>
           <input
@@ -115,14 +118,20 @@ const Form = () => {
             onChange={handleInputChange}
           />
         </div>
-
-        <select class="form-select" name="subscriptionType" onChange={handleInputChange}>
-          <option selected >SubscriptionType</option>
-          <option value="Yearly" >Yearly</option>
+      </div>
+      <div className="internet-details-form">
+        <h5>Internet plan details:</h5>
+        <select
+          class="form-select"
+          name="subscriptionType"
+          onChange={handleInputChange}
+        >
+          <option selected>SubscriptionType</option>
+          <option value="Yearly">Yearly</option>
           <option value="Monthly">Monthly</option>
           <option value="Quarterly">Quarterly</option>
         </select>
-        
+
         <div class="mb-3">
           <label class="form-label">Renewal Date:</label>
           <input
@@ -153,9 +162,9 @@ const Form = () => {
             onChange={handleInputChange}
           />
         </div>
+      </div>
 
-        
-      </form>
+      {/* </fo rm> */}
     </div>
   );
 };

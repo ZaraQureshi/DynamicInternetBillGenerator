@@ -1,3 +1,4 @@
+
 .app-container{
   display:grid;
   grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
@@ -9,12 +10,21 @@
   font-size: small;
   /* text-align: center; */
   /* width:800px; */
-  border:1px solid black;
-  padding:10px
+  /* border:1px solid grey; */
+  padding:10px;
+  margin: 1em 2em 0 0;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+
 }
 
 .main-container h3{
   color:darkblue;
+}
+.provider-details-form, .internet-details-form, .user-details-form {
+  border: 1px grey solid;
+    border-radius: 15px;
+    padding: 15px;
+    margin-top:1em ;
 }
 .provider-address{
   line-height: 2px;
