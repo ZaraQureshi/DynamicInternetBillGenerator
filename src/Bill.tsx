@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useData } from "./DataContext.tsx";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
+import './App.css';
 const Bill = () => {
   const { data } = useData();
   //
@@ -149,9 +150,9 @@ const Bill = () => {
         </p>
       </div>
     </div>
-    <button type="submit" class="btn btn-primary" onClick={downloadPDF}>
+    <button type="submit" class="btn btn-primary download-button" onClick={downloadPDF}>
           Download
-        </button>
+    </button>
     </div>
   );
 };

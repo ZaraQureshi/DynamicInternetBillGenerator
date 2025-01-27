@@ -92,3 +92,9 @@ border: none;
     transform: rotate(360deg);
   }
 }
+
+.download-button {
+  float: right;
+  margin-right: 25px;
+  margin-top: 10px;
+}
