@@ -41,7 +41,9 @@ const DynamicBill: React.FC = () => {
   };
 
   const downloadFormData = () => {
-    const blob = new Blob([JSON.stringify(formData, null, 2)], { type: "application/json" });
+    const blob = new Blob([JSON.stringify(formData, null, 2)], {
+      type: "application/json",
+    });
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
     link.download = "receipt-data.json";
@@ -49,54 +51,46 @@ const DynamicBill: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Receipt Upload and Form Generator</h1>
-
-      {/* File Upload */}
-      <div className="mb-6">
-        <label className="block text-sm font-medium mb-2">Upload Receipt</label>
-        <input
-          type="file"
-          accept="image/*"
-          onChange={handleFileUpload}
-          className="border p-2 w-full"
-        />
-      </div>
-
-      {/* Display Extracted Text */}
-      {uploadText && (
-        <div className="bg-gray-100 p-4 rounded mb-6">
-          <h2 className="text-lg font-semibold">Extracted Text:</h2>
-          <pre className="whitespace-pre-wrap">{uploadText}</pre>
-        </div>
-      )}
-
-      {/* Dynamic Form */}
-      {fields.length > 0 && (
-        <form className="space-y-4">
-          {fields.map((field) => (
-            <div key={field} className="field">
-              <label className="block text-sm font-medium mb-2" htmlFor={field}>
-                {field}
-              </label>
-              <input
-                type="text"
-                id={field}
-                value={formData[field]}
-                onChange={(e) => handleFieldChange(field, e.target.value)}
-                className="border p-2 w-full"
-              />
-            </div>
-          ))}
-          <button
-            type="button"
-            onClick={downloadFormData}
-            className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700"
-          >
-            Download Data
-          </button>
-        </form>
-      )}
+    <div class="bill">
+       <h1>MAHALAXMI NETWORK</h1>\n{" "}
+      <p>
+        <strong>No.</strong> 2207
+      </p>
+      \n{" "}
+      <p>
+        <strong>Date:</strong> 21/12/25
+      </p>
+      \n{" "}
+      <p>
+        <strong>Received with thanks from:</strong> Pranay Arun Jadhav
+      </p>
+      \n{" "}
+      <p>
+        <strong>The sum of rupees:</strong> 500
+      </p>
+      \n{" "}
+      <p>
+        <strong>In Full/Part/Advance payment on A/C of:</strong>{" "}
+      </p>
+      \n{" "}
+      <p>
+        <strong>by cheque/cash/draft:</strong>{" "}
+      </p>
+      \n{" "}
+      <p>
+        <strong>For MAHALAXMI NETWORK</strong>
+      </p>
+      \n{" "}
+      <p>
+        <strong>Proprietor Signature:</strong>{" "}
+      </p>
+      \n{" "}
+      <p>
+        <strong>Address:</strong> Mahalaxmi General Store, Near Acharya College,
+        Opp. Dhanvantri Hospital, Chembur Govandi Road, Mumbai - 400 071. Cell.
+        98195 15629/80800 07086
+      </p>
+      \n
     </div>
   );
 };
