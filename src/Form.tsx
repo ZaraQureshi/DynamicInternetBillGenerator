@@ -16,8 +16,7 @@ const Form = () => {
       ...prev,
       [name]: value,
     }));
-    // setData(formValues)
-    // console.log(data);
+    
   };
   return (
     <div class="form-container container">

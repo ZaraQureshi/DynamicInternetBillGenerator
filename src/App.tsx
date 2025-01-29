@@ -3,6 +3,7 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Bill from './Bill.tsx';
 import Form from './Form.tsx';
+import DynamicBill from './DynamicBill.tsx';
 
 function App() {
   return (
