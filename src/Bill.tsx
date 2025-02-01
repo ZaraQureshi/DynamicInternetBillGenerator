@@ -5,7 +5,12 @@ import html2canvas from "html2canvas";
 import './App.css';
 const Bill = () => {
   const { data } = useData();
-  //
+  useEffect(()=>{
+    let elements=document.getElementsByClassName("dynamic-bg");
+    for(let i=0;i<elements.length;i++){
+      (elements[i] as HTMLElement).style.backgroundColor=data.color
+    }
+  },[data])
   const downloadPDF = () => {
     console.log("inside download");
     
@@ -77,12 +82,12 @@ const Bill = () => {
     <div>
 
     
-    <div class="main-container" id="main-container">
+    <div class="main-container" id="main-container" >
       <div class="provider-details">
-        <div>
+        <div className="dynamic-bg">
           <h3><img src={"https://www.freepnglogos.com/uploads/logo-internet-png/logo-internet-internet-icon-line-iconset-iconsmind-31.png"}/>{data.providerName}</h3>
-          <h5>INTERNET & WIFI SERVICES</h5>
-          <h5>We Provide You The Best Internet Service</h5>
+          {/* <h5>INTERNET & WIFI SERVICES</h5>
+          <h5>We Provide You The Best Internet Service</h5> */}
         </div>
         <div class="provider-address">
           <p>{data.providerAddress} </p>
@@ -116,7 +121,7 @@ const Bill = () => {
       </div>
       <div>
         <table>
-          <tr>
+          <tr className="dynamic-bg">
             <td>Sr</td>
             <td>Services</td>
             <td>Quantity</td>
@@ -132,7 +137,7 @@ const Bill = () => {
             <td>9%</td>
             <td>{data.totalAmount}</td>
           </tr>
-          <tr>
+          <tr className="dynamic-bg">
             <td>Total value</td>
             <td></td>
             <td></td>
