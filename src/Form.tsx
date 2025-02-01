@@ -8,6 +8,7 @@ const Form = () => {
     phone: "",
     email: "",
     address: "",
+    color: "",
   });
   const setAllFormValues = (e) => {};
   const handleInputChange = (e) => {
@@ -16,10 +17,31 @@ const Form = () => {
       ...prev,
       [name]: value,
     }));
-    
   };
+
+  const getColorPicker = (e) => {
+    setData((...prev)=>({
+      ...prev,
+      color:e.target.value
+    }))
+    console.log(e.target.value);
+  };
+
   return (
     <div class="form-container container">
+      <div className="bgColor-and-logo mb-3">
+        <input
+          type="color"
+          id="colorPicker"
+          name="colorPicker"
+          value={data.color}
+          onChange={getColorPicker}
+        />
+        <p>
+          Selected Color: <span id="colorValue">{data.color}</span>
+        </p>
+        
+      </div>
       <div className="provider-details-form">
         <h5>Provider Details: </h5>
         <div class="mb-3">

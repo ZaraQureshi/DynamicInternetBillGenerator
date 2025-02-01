@@ -21,7 +21,7 @@ export const DataProvider: React.FC<{ children: ReactNode }> =({children})=>{
     renewalDate:"",
     speed:"",
     totalAmount:"",
-    
+    color:""
     });    
     return (
         <DataContext.Provider value={{data,setData}}>
