@@ -15,7 +15,6 @@ const Bill = () => {
     console.log("inside download");
     
     const element = document.getElementById("main-container"); // ID of the HTML element you want to convert to PDF
-    console.log("inside download",element);
 
     if (!element || !(element instanceof HTMLElement)) {
         console.error("Element with the specified ID is not a valid HTMLElement.");
