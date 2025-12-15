@@ -52,9 +52,9 @@ table tr,
 td {
   outline: 1px solid black;
   padding: 5px;
+  border-collapse: collapse;
 }
 table {
-  border-collapse: collapse;
   width: 100%;
 }
 /* tr:nth-child(1) td {

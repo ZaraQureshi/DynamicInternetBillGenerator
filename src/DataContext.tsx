@@ -1,41 +1,25 @@
-import React,{createContext,useState,useContext,ReactNode} from 'react';
-interface DataContextType{
-    data:string;
-    setData:(value:string)=>void;
+import { createContext, ReactNode, useContext, useState } from 'react';
+import { InvoiceFormValues } from './lib/InvoiceSchema';
+interface DataContextType {
+    data: InvoiceFormValues;
+    setData: (values: InvoiceFormValues) => void;
 }
 
-export const DataContext=createContext<DataContextType|undefined>(undefined);
+export const DataContext = createContext<DataContextType | undefined>(undefined);
 
-export const DataProvider: React.FC<{ children: ReactNode }> =({children})=>{
-    const [data, setData] = useState({
-        userId:"",
-        recievedFrom: "",
-    phone: "",
-    email: "",
-    address: "",
-    providerName:"",
-    providerAddress:"",
-    providerPhone:"",
-    providerEmail:"",
-    subscriptionType:"",
-    renewalDate:"",
-    speed:"",
-    totalAmount:"",
-    color:"",
-    geminiData:""
-
-    });    
+export const DataProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+    const [data, setData] = useState<InvoiceFormValues>({} as InvoiceFormValues);
     return (
-        <DataContext.Provider value={{data,setData}}>
+        <DataContext.Provider value={{ data, setData }}>
             {children}
         </DataContext.Provider>
     )
 }
 
 //custom hook
-export const useData=()=>{
+export const useData = () => {
     const context = useContext(DataContext);
-    if(!context){
+    if (!context) {
         throw new Error("Context not set")
     }
     return context
