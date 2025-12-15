@@ -1,47 +1,71 @@
-# DynamicInternetBillGenerator
-# Getting Started with Create React App
+🧾 Dynamic Internet Bill Generator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A frontend-focused invoice generator built to explore real-world UI architecture, state management, and PDF generation using modern React tooling.
 
-## Available Scripts
+This project allows users to create, preview, and download internet bills with dynamic data, clean design, and smooth animations — all without a backend.
 
-In the project directory, you can run:
+🔗 Live Demo:
+https://zaraqureshi.github.io/DynamicInternetBillGenerator
 
-### `npm start`
+💡 Why I Built This
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+I wanted to build a project that goes beyond CRUD forms and focuses on:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+State flow across components
 
-### `npm test`
+Reusable UI patterns
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Reliable PDF generation
 
-### `npm run build`
+Smooth user experience
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Clean, professional UI design
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This project simulates a real ISP billing workflow, making it a strong portfolio piece.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+✨ Key Highlights
 
-### `npm run eject`
+⚛️ Built with React 19 + Vite
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+🧠 Global state management using Context API
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+🎨 Tailwind CSS + shadcn/ui for consistent design
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+🎥 Smooth animations using Framer Motion
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+📄 Live PDF preview & download using @react-pdf/renderer
 
-## Learn More
+🧩 Component-driven architecture
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+📱 Fully responsive layout
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+🚫 No backend dependency
+
+🧠 State Management (Context API)
+
+The Context API is used to manage invoice data globally.
+
+Why Context API?
+
+Avoids prop drilling
+
+Keeps form data and preview in sync
+
+Simple, predictable state flow
+
+Ideal for medium-scale apps
+
+How it works:
+
+Invoice form updates global context
+
+Preview and PDF components consume the same data
+
+Any change reflects instantly across the UI
+
+
+📄 PDF Generation Strategy
+
+Initially explored html2canvas + jsPDF, but switched to:
+
+✅ @react-pdf/renderer
